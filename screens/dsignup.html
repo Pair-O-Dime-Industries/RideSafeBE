@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <div class="row">
+        <form id="signupForm" enctype="multipart/form-data" method="POST" action="../backend/signup.php" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="fname" type="text" required>
+                    <label for="fname">First Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="lname" type="text" required>
+                    <label for="lname">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="email" type="email" required>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="psswrd" type="password" required
+                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+                    <label for="psswrd">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="phone" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
+                    <label for="phone">Phone number</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="profileImg" type="file" accept="image/*" required>
+                    <label for="profileImg">Profile picture</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="License" type="file" accept="image/*" required>
+                    <label for="License">Liscence</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="LicensePlate" type="text" required>
+                    <label for="LicensePlate">License Plate</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="Make" type="text" required>
+                    <label for="Make">Make</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="Model" type="text" required>
+                    <label for="Model">Model</label>
+                </div>
+            </div>
+              <div class="row">
+                  <div class="input-field col s12">
+                      <input name="Regno" type="text" required>
+                      <label for="Regno">Registration number</label>
+                  </div>
+              </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="CarPhoto" type="file" accept="image/*" required>
+                    <label for="CarPhoto">CarPhoto</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="CcpyScn" type="file" accept="image/*" required>
+                    <label for="CcpyScn">Certified Copy Scan</label>
+                </div>
+            </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <input type="submit" name="driver" class="btn waves-effect waves-light blue" value="Sign Up" required />
+        </div>
+    </div>
+
+    </form>
+    </div>
+    <script src="" async defer></script>
+</body>
+
+</html>
