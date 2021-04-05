@@ -13,6 +13,14 @@ function riderExists($username, $PhNum, $Email){
     }
 
 }
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 function driverExists($Email, $PhNum){
     global $conn;
     $value = mysqli_query($conn, "SELECT Email, PhNum from driver");

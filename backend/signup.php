@@ -1,21 +1,22 @@
 <?php
 include_once './config.php';
 include_once './functions.php';
-$profileRPath = SITE_ROOT . DS . '..' . DS . 'images/rider/profileImg';
-$idRPath = SITE_ROOT . DS . '..' . DS . 'images/rider/idImg';
+$profileRPath = SITE_ROOT . DS . '..' . DS . 'images/riders/profileImg';
+$idRPath = SITE_ROOT . DS . '..' . DS . 'images/riders/idImg';
 $DriverImgPath = SITE_ROOT . DS . '..' . DS . 'images/driver/driverImg';
 $carImgPath = SITE_ROOT . DS . '..' . DS . 'images/driver/carImg';
-$data = json_decode(file_get_contents("php://input"));
-$type = $data->type;
+
+    $type = 1;
 if ($type == 1) {
-    $fname = $data->fname;
-    $lname = $data->lname;
-    $email = $data->email;
-    $username = $data->username;
-    $password = $data->password;
-    $mobile = $data->phone;
-    $image = $_FILES [$data->form->proImg]['name'];
-    $card = $_FILES[$data->form->card]['name'];
+    $fname = test_input($_POST['fname']);
+    $lname =test_input($_POST['lname']);
+    $email =test_input($_POST['email']);
+    $username =test_input($_POST['username']);
+    $password =test_input($_POST['password']);
+    $mobile = test_input($_POST['phone']);
+    $image = test_input($_FILES ['profileImg']['name']);
+    $card = test_input($_FILES['IDcard']['name']);
+    
     
     if(riderExists($username,$mobile,$email) == false){
         //CODE TO ENSURE NO TWO IMAGES HAVE THE SAME NAME
@@ -31,8 +32,8 @@ if ($type == 1) {
         VALUES ('$fname','$lname','$email','$username','$password','$mobile', '$image', '$card')";
         if (mysqli_query($conn, $sql)) {
             echo 1; // success
-            move_uploaded_file($_FILES[$data->form->proImg]['tmp_name'],$profileRPath.'/'.$image);
-            move_uploaded_file($_FILES[$data->form->card]['tmp_name'],$idRPath.'/'.$card);
+            move_uploaded_file($_FILES['profileImg']['tmp_name'],$profileRPath.'/'.$image);
+            move_uploaded_file($_FILES['IDcard']['tmp_name'],$idRPath.'/'.$card);
         } else {
             echo "Error: " . $sql . ":-" . mysqli_error($conn);
         }
@@ -103,7 +104,8 @@ else if(isset($_POST['driver'])){
         }
         
     }
-}
+}   
+
     mysqli_close($conn);
-    echo json_encode($msg);
+    
     ?>

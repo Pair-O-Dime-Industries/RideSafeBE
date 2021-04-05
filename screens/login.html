@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login | NotRideSafeTT</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script language="javascript" src="../actions/script.js"></script>
+</head>
+
+<body>
+    <!-- TODO: Add Navigation to all pages -->
+    <div id="show">
+        <a name="login-page"></a>
+        <h1> Welcome Back </h1>
+        <form class="login" action="/submissionsiteURLgoeshere" method="POST">
+            <input type="text" class="login-input" placeholder="Email " name="email" required>
+            <input type="password" class="login-input" placeholder="Password" name="pass" required>
+            <div class="forgot">
+                <a href="javascript:clickme()"> Forgot password? </a>
+            </div>
+            <span class="new-account">
+            Don&#39;t have an account? <a href="../screens/signup.html"> Sign up now. </a>
+        </span>
+            <input type="submit" value="Login" class="submit-btn">
+        </form>
+        <style>
+            #show {
+                display: block;
+            }
+        </style>
+    </div>
+    <!-- Forgot Password -->
+    <div id="hidden">
+        <h1> Reset Password</h1>
+        <form action="/" method="POST">
+            <p> Please enter your email to request that your password be changed. </p>
+            <input id="email-reset" type="email" placeholder="Enter email" required>
+            <input class="submit-btn" id="reset" type="submit" value="Reset Password">
+        </form>
+        <button class="submit-btn" id="cancel"> <a href="../screens/login.html" id="btn"> Cancel </a> </button>
+        <style>
+            #hidden {
+                display: none;
+            }
+        </style>
+    </div>
+</body>
+
+</html>

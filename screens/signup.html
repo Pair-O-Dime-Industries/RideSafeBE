@@ -1,77 +1,60 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <div class="row">
-            <form id="signupForm" class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input name="fname" type="text" required>
-                        <label for="fname">First Name</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input name="lname" type="text" required>
-                        <label for="lname">Last Name</label>
-                    </div>
-                </div>
-                 <div class="row">
-                     <div class="input-field col s12">
-                         <input name="email" type="email" required>
-                         <label for="email">Email</label>
-                     </div>
-                 </div>
-                  <div class="row">
-                      <div class="input-field col s12">
-                          <input name="username" type="text" minlength="8" required>
-                          <label for="username">Username</label>
-                      </div>
-                  </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input name="password" type="password" required
-                            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input name="phone" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
-                        <label for="phone">Phone number</label>
-                    </div>
-                </div>
-                     <div class="row">
-                         <div class="input-field col s12">
-                             <input name="profileImg" type="file" accept="image/*" required>
-                             <label for="profileImg">Profile picture</label>
-                         </div>
-                     </div>
-                     <div class="row">
-                         <div class="input-field col s12">
-                             <input name="IDcard" type="file" accept="image/*" required>
-                             <label for="IDcard">ID card</label>
-                         </div>
-                     </div>
-                </div>
-               
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Sign up | TravelSafe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script language="javascript" src="../actions/script.js"></script>
+</head>
 
-                <div class="row">
-                    <div class="col">
-                        <input type="submit" name="submit" class="btn waves-effect waves-light blue" value="Sign Up" required />
-                    </div>
-                </div>
+<body>
+    <!-- TODO: Add Navigation to all pages -->
+    <h1> Create an account </h1>
+    <form class="signup" id="signupForm">
 
-            </form>
-        </div> 
-        <script src="../actions/signup_actions.js" async defer></script>
-    </body>
+        <div class="switch">
+            <p class="slider" id="Rider" onclick="uncheck()"> Rider </p>
+            <p class="slider" id="Driver" onclick="check()"> Driver </p>
+        </div>
+        <h3 class="p-head">Add Photo</h3>
+        <span class="photo-container">
+            
+            <input type="file" display="none" name="profileImg" id="upload" required> 
+            <img class="image" id="output" src="">
+            
+        </span>
+
+        <span class="signup-container">
+            <input class="signup-input" id="first" type="text" placeholder="First Name" name="fname" required>
+            <input class="signup-input" id="last" type="text" placeholder="Last Name" name="lname" required>
+            <input class="signup-input" id="mail" type="email" placeholder="Email" name="email" required>
+            <input class="signup-input phone" type="tel" placeholder="Phone Number" name="phone" required>
+        <input class="signup-input user" type="text" placeholder="Username" name="username" required>
+        <div>
+            <input class="signup-input psw" type="password" placeholder="Enter Password" name="pass" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+            <input class="signup-input psw" type="password" placeholder="Confirm Password" name="password" minlength="8" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+
+        </div>
+        <!-- <span id="signup-hide">
+            <input class="signup-input" type="text" placeholder="License Number" name="license" required min=6 max=7>
+        </span> -->
+        <span id="signup-show">
+            <h3 >Upload ID card</h3>
+            <input class="signup-input idc" type="file" name="IDcard" required>
+        </span>
+        </span>
+        <div class="login">
+            Already have an account? <a href="../screens/login.html"> Log in here</a>
+        </div>
+        <div>
+            <input class="submit-btn" id="next-btn" type="submit" value="Sign Up" required>
+        </div>
+    </form>
+    <script src="../actions/signup_actions.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>
+</body>
+
 </html>
