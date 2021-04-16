@@ -16,14 +16,14 @@ function isEmpty(input){
         return true;
     }  
 }
-upload.onchange = async (event) =>{
+// upload.onchange = async (event) =>{
 
-	var image = document.getElementById('output');
-	image.src = URL.createObjectURL(event.target.files[0]);
-}
-signupForm.onsubmit = async (e) => {
+// 	var image = document.getElementById('output');
+// 	image.src = URL.createObjectURL(event.target.files[0]);
+// }
+d_signUpForm.onsubmit = async (e) => {
     e.preventDefault();
-    let data = new FormData(document.forms.signupForm);
+    let data = new FormData(document.forms.d_signUpForm);
     let pass = data.get("password");
     pass = sha256(pass);
     data.set("password",pass);
@@ -31,7 +31,7 @@ signupForm.onsubmit = async (e) => {
         console.log(value);
     }
         var oReq = new XMLHttpRequest(); 
-        oReq.open("POST", "../backend/signup.php", true);
+        oReq.open("POST", "../backend/driversignup.php", true);
         oReq.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
             var response = this.responseText;
@@ -56,5 +56,3 @@ signupForm.onsubmit = async (e) => {
     
     oReq.send(data);
 }
-
-

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="row">
+            <form id="signupForm" class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="fname" type="text" required>
+                        <label for="fname">First Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="lname" type="text" required>
+                        <label for="lname">Last Name</label>
+                    </div>
+                </div>
+                 <div class="row">
+                     <div class="input-field col s12">
+                         <input name="email" type="email" required>
+                         <label for="email">Email</label>
+                     </div>
+                 </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <input name="username" type="text" minlength="8" required>
+                          <label for="username">Username</label>
+                      </div>
+                  </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" name="password" type="password" required
+                            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="phone" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
+                        <label for="phone">Phone number</label>
+                    </div>
+                </div>
+                     <div class="row">
+                         <div class="input-field col s12">
+                             <input name="profileImg" type="file" accept="image/*" required>
+                             <label for="profileImg">Profile picture</label>
+                         </div>
+                     </div>
+                     <div class="row">
+                         <div class="input-field col s12">
+                             <input name="IDcard" type="file" accept="image/*" required>
+                             <label for="IDcard">ID card</label>
+                         </div>
+                     </div>
+                </div>
+               
+
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" name="submit" class="btn waves-effect waves-light blue" value="Sign Up" required />
+                    </div>
+                </div>
+
+            </form>
+        </div> 
+        <script src="../actions/signup_actions.js" async defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>
+    </body>
+</html>

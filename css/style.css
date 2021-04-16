@@ -1,0 +1,203 @@
+        @media only screen and (orientation: landscape) {
+            * {
+                margin-left: center;
+                margin-right: center;
+            }
+            .login-input {
+                max-width: 50em;
+                display: inline-block;
+                margin: 30px;
+                margin-bottom: 300px;
+                width: 100%;
+            }
+        }
+        
+        body {
+            padding: 8px 24px 24px 24px;
+            margin: 5vh;
+            min-height: 320px;
+            min-width: 240px;
+            text-align: center;
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: Arial, Georgia;
+            color: rgb(37, 45, 116);
+            margin-bottom: 50px;
+        }
+        
+        span.new-account {
+            font-family: Arial, Georgia;
+            font-size: small;
+        }
+        
+        input {
+            padding: 10px 20px;
+            vertical-align: middle;
+        }
+        
+        .login-input {
+            margin: 20px;
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 50vw;
+        }
+        
+        .submit-btn {
+            background-color: rgb(37, 45, 116);
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer;
+            min-width: 3vw;
+            width: 10em;
+            display: block;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 3em;
+            margin-left: auto;
+            margin-right: auto;
+            font: 14px Arial;
+            border: 2px solid rgb(37, 45, 116);
+            border-style: outset;
+            border-radius: 90px;
+        }
+        /* Add a hover effect for buttons */
+        
+        .submit-btn:hover {
+            opacity: 0.8;
+        }
+        
+        .forgot {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        /*Forgot Password CSS*/
+        
+        #email-reset {
+            width: 30vw;
+            padding: 12px 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+            box-sizing: border-box;
+            border-radius: 20px;
+        }
+        
+        #reset {
+            margin-left: auto;
+        }
+        
+        #cancel {
+            border: 2px outset grey;
+            border-radius: 10px;
+            background-color: rgb(202, 56, 56);
+            width: 6em;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        #btn {
+            text-decoration: none;
+            color: white;
+        }
+        
+        #cancel:hover {
+            opacity: 0.8;
+        }
+        /*Sign Up CSS*/
+        
+        .slider {
+            display: inline-block;
+            white-space: nowrap;
+            border: 2px solid grey;
+            border-radius: 140px;
+            width: 90px;
+            height: 27px;
+            font-family: arial, sans-serif;
+            margin-block-start: 1em;
+            margin-bottom: 6vh;
+            cursor: pointer;
+        }
+        
+        #Rider {
+            background-color: rgb(35, 10, 124);
+            color: white;
+            border-right: 100px transparent;
+            width: 7em;
+            margin-inline-end: -2.5em;
+            position: relative;
+            z-index: 1;
+            transition: 0.2s;
+        }
+        
+        #Driver {
+            background-color: white;
+            color: black;
+            width: 8em;
+            position: unset;
+            transition: 0.2s;
+        }
+        
+        .photo-container {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            border-radius: 100px;
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+        }
+        
+        .image {
+            text-align: center;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        
+        #upload {
+            cursor: pointer;
+            z-index: 1;
+            /* margin-top: 7vh; */
+            position: absolute;
+            align-content: center;
+            opacity: 0;
+            width: 9.375rem;
+            height: 9.375rem;
+            border-radius: 10px;
+            padding: 0;
+        }
+        
+        .signup-input {
+            border-radius: 100px;
+            border: 1px solid rgb(37, 45, 116);
+            width: 50vw;
+            min-width: 140px;
+            margin: 20px;
+            float: none;
+        }
+        
+        #signup-show {
+            display: unset;
+        }
+        
+        #signup-hide {
+            display: none;
+        }
+        
+        .login {
+            display: block;
+            margin-top: inherit;
+        }
+        
+        #next-btn {
+            background-color: rgb(37, 45, 116);
+            color: white;
+            transition: 0.2s;
+            min-width: 7em;
+        }

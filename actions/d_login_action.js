@@ -16,45 +16,29 @@ function isEmpty(input){
         return true;
     }  
 }
-upload.onchange = async (event) =>{
-
-	var image = document.getElementById('output');
-	image.src = URL.createObjectURL(event.target.files[0]);
-}
-signupForm.onsubmit = async (e) => {
+d_loginForm.onsubmit = async (e) => {
     e.preventDefault();
-    let data = new FormData(document.forms.signupForm);
+    let data = new FormData(document.forms.d_loginForm);
     let pass = data.get("password");
     pass = sha256(pass);
     data.set("password",pass);
-    for(let value of data.values()){
-        console.log(value);
-    }
         var oReq = new XMLHttpRequest(); 
-        oReq.open("POST", "../backend/signup.php", true);
+        oReq.open("POST", "../backend/driverlogin.php", true);
         oReq.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
             var response = this.responseText;
             
             if(response == 1){
-                alert("Account created Successfully. Wait for approval");
+                alert("Login Successful");
+                window.location.href="../screens/testqr.html";
             }
             else if(response == 2){
-                alert("An error was encountered when adding new user. Renter data and try again.")
+                alert("An error was encountered. Re-enter data and try again.")
             }
-            else if(response == 4){
-                alert("Username/mobile/email is already in use.");
+            else if(response == 0){
+                alert("Invalid Credentials!");
             }
         }
-    };
-    
-   
-    
-    
-   
-    
-    
-    oReq.send(data);
+    };  
+     oReq.send(data);
 }
-
-
