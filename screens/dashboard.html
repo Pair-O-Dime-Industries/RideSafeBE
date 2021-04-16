@@ -1,0 +1,37 @@
+<!Doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        var req = new XMLHttpRequest();
+        let data = {check:'status'};
+        let url = "../backend/login.php";
+        req.responseType = 'json';
+        req.open('POST', url, true);
+        req.setRequestHeader("Content-Type", "application/json");
+        req.onload = function () {
+            var jsonResponse = req.response;
+            alert(jsonResponse.msg);
+            if (jsonResponse.error == true) {
+                window.location.href = "./login.html";
+                
+            }
+        };
+        req.send(JSON.stringify(data));
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    
+</head>
+
+<body>
+ <h1>YOU LOGGED IN</h1>
+
+    <script src="" async defer></script>
+</body>
+
+</html>

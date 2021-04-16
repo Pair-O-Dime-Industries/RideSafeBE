@@ -14,7 +14,28 @@ function clickme() {
         <style>
     } `;
 };
+logout.onclick = async(e) =>{
+    console.log('worked');
+     e.preventDefault();
+     let data = {logout:'logout'};
+     var oReq = new XMLHttpRequest(); 
+  
+      oReq.open("POST", "../backend/login.php", true);
+          oReq.setRequestHeader("Content-Type", "application/json");
+        oReq.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+        var response = this.responseText;
 
+        if(response == true){
+            window.location.href="./login.html";
+        
+        }
+
+        
+        }
+        };
+        oReq.send(JSON.stringify(data));
+}
 function check() { //Rider turns white and Driver turns yellow. Next button is yellow
     var rider = document.getElementById("Rider");
     var driver = document.getElementById("Driver");

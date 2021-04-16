@@ -13,6 +13,39 @@ function riderExists($username, $PhNum, $Email){
     }
 
 }
+// function autheticateRider($username, $password){
+// global $conn;
+// $value = mysqli_query($conn, "SELECT UserName, Password from rider WHERE UserName =$username AND Password = $password");
+
+//     if () {
+//         return true;
+//     } else {
+//         return false;
+//     }
+
+
+// }
+function checklogin(){
+if (!(isset($_SESSION['RiderID']) && $_SESSION['RiderID'] != '')) {
+    $test = $_SESSION['RiderID'];
+    // User is not logged in!
+    $result = array(
+        'error' => true,
+        'msg' => 'Please login first!',
+    );
+
+} else {
+
+    // write the needed code to save the vote to db here
+
+    $result = array(
+        'error' => false,
+        'msg' => 'Thanks!',
+    );
+}
+header('Content-type: application/json');
+echo json_encode($result);
+}
 function test_input($data)
 {
     $data = trim($data);

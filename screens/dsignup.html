@@ -13,7 +13,7 @@
 
 <body>
     <div class="row">
-        <form id="signupForm" enctype="multipart/form-data" method="POST" action="../backend/signup.php" class="col s12">
+        <form id="d_signUpForm" class="col s12">
             <div class="row">
                 <div class="input-field col s12">
                     <input name="fname" type="text" required>
@@ -34,9 +34,9 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input name="psswrd" type="password" required
+                    <input name="password" type="password" required
                         pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
-                    <label for="psswrd">Password</label>
+                    <label for="password">Password</label>
                 </div>
             </div>
             <div class="row">
@@ -104,7 +104,9 @@
 
     </form>
     </div>
-    <script src="" async defer></script>
+    <script src="../actions/d_signup_actions.js" async defer></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>
 </body>
 
 </html>
